@@ -1,16 +1,29 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { HeaderComponent } from './shared/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './shared/nav/nav.component';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { pageComponents, routes } from './routes';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    NavComponent,
+    ...pageComponents
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    HeaderComponent,
+    NavComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

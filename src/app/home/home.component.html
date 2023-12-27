@@ -1,0 +1,51 @@
+
+<div class="row">
+  <div class="col-5">
+    <img src="assets/domain_name.webp" alt="Domains Vault" class="img-fluid" />
+  </div>
+  <div class="col-7">
+
+    <div *ngIf="localhostOrPrimary; else parkedOrSelling">
+      <p>
+        Welcome to <strong>Domains Vault</strong>. Home to a bunch of random domains owned, operated,
+        or managed by <a href="https://hacia.net" target="_blank">Hacia.net</a><br />
+        Some of these domains are parked, some are for sale, and some are just being used for
+        testing or various other purposes. If you have any questions, please feel free to contact
+        us at <a routerLink="/contact">through this form</a>. We will be glad to answer any questions.
+      </p>
+      <p>
+        Have a look at our <a routerLink="/domain-list">domain list</a> to see if theres any domains you
+        might be interested in. If you are interested in any of the domains, please feel free to
+        <a routerLink="/make-offer">make an offer</a>
+      </p>
+      <p>
+        If you found this website due to any problems with any of the domains listed here on the site,
+        please feel free to <a routerLink="/report-problem">report a problem</a> so we can
+        investigate the issue.
+      </p>
+    </div>
+
+  </div>
+
+
+</div>
+
+<ng-template #parkedOrSelling>
+  <p>
+    Hey there, welcome to <strong>Domains vault</strong>
+  </p>
+  <p>
+    It looks as if you have stumbled upon one of our domains. <strong>{{currentDomain}}</strong><br />
+    this domain is either parked, for sale, or otherwise reserved and managed by our service.
+  </p>
+  <p>
+    If you're interested in acquiring this domain for your own endeavors, we'd be delighted
+    to provide you with more information. Simply reach out to us
+    <a routerLink="/make-offer">make an offer</a>, and we'll gladly assist you in making it yours.<br />
+    <em>Assuming this particular domain is for sale, of course.</em>
+  </p>
+  <p>
+    If you found this website due to any problems with this domain, please feel free to
+    <a routerLink="/report-problem">report a problem</a> so we can investigate the issue further.
+  </p>
+</ng-template>
