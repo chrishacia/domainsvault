@@ -5,7 +5,7 @@ While building this out I descided that maybe.. just maybe, there are other peop
 
 Feel free to fork this repo, and help me build it up into something larger, or if you find a bug, lemme know. Either way, here it is.
 
-The backend for this project (written using Node.js, Express.js, and MySQL) can be found at. [https://github.com/chrishacia/domainsvault-be/tree/main](https://github.com/chrishacia/domainsvault-be/tree/main)
+The backend for this project (written using Node.js, Express.js, and MySQL) can be found at. [https://github.com/chrishacia/domainsvault-be](https://github.com/chrishacia/domainsvault-be)
 
 
 ## Stock Angular instructions
