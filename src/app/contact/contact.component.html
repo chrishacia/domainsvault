@@ -33,7 +33,7 @@
                       <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
                     </svg>
                   </span>
-                  <input type="email" class="form-control" id="email" name="email" value="" required>
+                  <input type="email" class="form-control" id="email" name="email" value="" required formControlName="email">
                 </div>
                 <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')" class="text-danger">
                   Email is required.
@@ -41,14 +41,14 @@
               </div>
               <div class="col-12">
                 <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="12" required formControlName="message"></textarea>
                 <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.hasError('required')" class="text-danger">
                   Message is required.
                 </div>
               </div>
               <div class="col-12">
                 <div class="d-grid">
-                  <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+                  <button class="btn {{contactForm.invalid ? 'btn-secondary' : 'btn-primary'}} btn-lg" type="submit" [disabled]="contactForm.invalid">Submit</button>
                 </div>
               </div>
             </div>
@@ -59,3 +59,5 @@
     </div>
   </div>
 </section>
+
+{{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'.length}}

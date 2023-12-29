@@ -1,5 +1,14 @@
-# DomainsvaultCom
+# Domainsvault.com
+I collect domains like some people might collect stamps. Some of these domains I manage for people I know. Some I have my own plans for, and some are just meant for email or resell. I wanted an excuse to learn Angular, so I am creating this project primarily for that purpose. I also wanted to create a default landing page for all the domains I have parked somewhere. That could act as a service for people to contact me about any one of the domains I have, potentially request buying one. Or, hypothetically if someone is spoofing one of my domains, or maybe my server was hacked and someone is abusing one of the domains. Someone could reach me and let me know so I can mitigate the issue.
 
+While building this out I descided that maybe.. just maybe, there are other people out there similar as me, looking to have something like this for their own needs. I figured why not make it avaliable for those people.
+
+Feel free to fork this repo, and help me build it up into something larger, or if you find a bug, lemme know. Either way, here it is.
+
+The backend for this project (written using Node.js, Express.js, and MySQL) can be found at. [https://github.com/chrishacia/domainsvault-be/tree/main](https://github.com/chrishacia/domainsvault-be/tree/main)
+
+
+## Stock Angular instructions
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 
 ## Development server
