@@ -15,6 +15,7 @@ export class DomainListComponent implements OnInit {
   tlds: string[] = [];
   columnNameSorted: string = 'name';
   columnDirectionSorted: string = 'asc';
+  searchTerm: string = '';
 
   constructor(private domainsService: DomainsService, private deepCloneService: DeepcloneService) {}
 
@@ -41,7 +42,6 @@ export class DomainListComponent implements OnInit {
 
   sortTableByColumnAscDesc(event: Event, columnName: string): void {
     event.preventDefault();
-
     if (this.columnNameSorted === columnName && this.columnDirectionSorted === 'asc') {
       this.sortTableByColumnDesc(columnName);
       this.columnDirectionSorted = 'desc';
@@ -54,7 +54,6 @@ export class DomainListComponent implements OnInit {
 
 
   sortTableByColumnAsc(columnName: string): void {
-    this.recloneDomains();
     this.filteredDomains.sort((a: any, b: any) => {
       if (a[columnName] < b[columnName]) {
         return -1;
@@ -67,7 +66,6 @@ export class DomainListComponent implements OnInit {
   }
 
   sortTableByColumnDesc(columnName: string): void {
-    this.recloneDomains();
     this.filteredDomains.sort((a: any, b: any) => {
       if (a[columnName] > b[columnName]) {
         return -1;
@@ -79,14 +77,21 @@ export class DomainListComponent implements OnInit {
     });
   }
 
-  filterDomainByFirstLetter(letter: string): void {
+  filterDomainByFirstLetter(event: Event, letter: string): void {
+    event.preventDefault();
     this.recloneDomains();
     this.filteredDomains = this.filteredDomains.filter((domain: any) => domain.name[0] === letter);
   }
 
-  filterDomainByTld(tld: string): void {
+  filterDomainByTld(event: Event, tld: string): void {
+    event.preventDefault();
     this.recloneDomains();
     this.filteredDomains = this.filteredDomains.filter((domain: any) => domain.domain_tld === tld);
   }
 
+  filterDomainBySearchTerm(event: Event): void {
+    event.preventDefault();
+    this.recloneDomains();
+    this.filteredDomains = this.filteredDomains.filter((domain: any) => domain.name.includes(this.searchTerm));
+  }
 }

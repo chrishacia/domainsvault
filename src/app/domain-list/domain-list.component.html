@@ -2,12 +2,22 @@
   This list of domains is updated once every couple of months.
 </p>
 
-Filter by: <br>
-Letter: <a href *ngFor="let letter of arrAthruZ" (click)="filterDomainByFirstLetter(letter)" style="margin-right: 5px;">{{letter}}</a>
-<br>
-TLD: <a href *ngFor="let tld of tlds" (click)="filterDomainByTld(tld)" style="margin-right: 5px;">{{tld}}</a>
-<br>
-
+<div class="row">
+  <div class="col-md-8">
+    Filter by: <br>
+    Letter: <a href *ngFor="let letter of arrAthruZ" (click)="filterDomainByFirstLetter($event, letter)" style="margin-right: 5px;">{{letter}}</a>
+    <br>
+    TLD: <a href *ngFor="let tld of tlds" (click)="filterDomainByTld($event, tld)" style="margin-right: 5px;">{{tld}}</a>
+    <br>
+    <br>
+  </div>
+  <div class="col-md-4">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search domain" aria-label="Search domain" aria-describedby="button-addon2" [(ngModel)]="searchTerm">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="filterDomainBySearchTerm($event)">Search</button>
+    </div>
+</div>
+<div class="text-end"> Displaying: {{filteredDomains.length}} of {{domains.length}} domains.</div>
 
 <table class="table table-striped table-hover">
   <thead class="table-info">
