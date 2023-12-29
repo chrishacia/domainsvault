@@ -10,6 +10,8 @@ The backend for this project (written using Node.js, Express.js, and MySQL) can 
 You can preview this project live at [http://domainsvault.com](http://domainsvault.com)
 I won't be providing any "demo" access to this, so you unfortunately will not be able to see the pages behind the login, without cloning the repo yourself along with the backend that supports it, sorry.
 
+# Noteworthy Mention
+This project is still a work in progress, I update it frequently at the moment, I also have a day job and this is a hobby for me. So somethings may not have been created yet. Bare with me though :-)
 
 ## Stock Angular instructions
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
