@@ -7,6 +7,9 @@ Feel free to fork this repo, and help me build it up into something larger, or i
 
 The backend for this project (written using Node.js, Express.js, and MySQL) can be found at. [https://github.com/chrishacia/domainsvault-be](https://github.com/chrishacia/domainsvault-be)
 
+You can preview this project live at [http://domainsvault.com](http://domainsvault.com)
+I won't be providing any "demo" access to this, so you unfortunately will not be able to see the pages behind the login, without cloning the repo yourself along with the backend that supports it, sorry.
+
 
 ## Stock Angular instructions
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
