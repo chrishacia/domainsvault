@@ -22,7 +22,6 @@ export class DomainListComponent implements OnInit {
   ngOnInit(): void {
     this.domainsService.getData().subscribe({
       next: data => {
-        console.log(data)
         this.domains = data.domains;
         this.filteredDomains = data.domains;
         this.tlds = data.tlds;
@@ -36,7 +35,6 @@ export class DomainListComponent implements OnInit {
   }
 
   recloneDomains(): void {
-    console.log(this.filteredDomains);
     this.filteredDomains = this.deepCloneService.deepCopy(this.domains);
   }
 
@@ -51,7 +49,6 @@ export class DomainListComponent implements OnInit {
     }
     this.columnNameSorted = columnName;
   }
-
 
   sortTableByColumnAsc(columnName: string): void {
     this.filteredDomains.sort((a: any, b: any) => {

@@ -11,6 +11,8 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup = new FormGroup({});
   endPoint: string = `${location.protocol}//${location.hostname}:3000/api/message`;
   msgType: string = 'contact';
+  showSuccessBanner: boolean = false;
+  showErrorBanner: boolean = false;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {}
 
@@ -28,11 +30,13 @@ export class ContactComponent implements OnInit {
       this.http.post(this.endPoint, this.contactForm.value)
         .subscribe({
           next: (response) => {
-            console.log('Server response:', response);
+            // console.log('Server response:', response);
+            this.showMessageSuccessBanner();
             this.contactForm.reset();
           },
           error: (error) => {
             // Handle error response here
+            this.showMessageErrorBanner();
             console.error('Error:', error);
           }
         });
@@ -41,14 +45,28 @@ export class ContactComponent implements OnInit {
     }
   }
 
-    markFormGroupTouched(formGroup: FormGroup) {
-    Object.values(formGroup.controls).forEach(control => {
-      control.markAsTouched();
+  showMessageSuccessBanner() {
+    this.showSuccessBanner = true;
+    setTimeout(() => {
+      this.showSuccessBanner = false;
+    }, 5000);
+  }
 
-      if (control instanceof FormGroup) {
-        this.markFormGroupTouched(control);
-      }
-    });
+  showMessageErrorBanner() {
+    this.showErrorBanner = true;
+    setTimeout(() => {
+      this.showErrorBanner = false;
+    }, 5000);
+  }
+
+  markFormGroupTouched(formGroup: FormGroup) {
+  Object.values(formGroup.controls).forEach(control => {
+    control.markAsTouched();
+
+    if (control instanceof FormGroup) {
+      this.markFormGroupTouched(control);
+    }
+  });
   }
 
 }
