@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 export interface Domain {
   age: number;
@@ -27,7 +28,7 @@ export interface DomainListResponse {
   providedIn: 'root',
 })
 export class DomainsService {
-  private apiUrl = `${location.protocol}//${location.hostname}:3000/api/domain-list`;
+  private apiUrl = `${environment.apiUrl}/domain-list`;
 
   constructor(private http: HttpClient) {}
 

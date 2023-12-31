@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DomainListResponse, DomainsService } from '../domains.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { DomainListResponse, DomainsService } from '../domains.service';
 })
 export class MakeOfferComponent implements OnInit {
   contactForm: FormGroup = new FormGroup({});
-  endPoint: string = `${location.protocol}//${location.hostname}:3000/api/message`;
+  endPoint: string = `${environment.apiUrl}//message`;
   msgType: string = 'offer';
   showSuccessBanner: boolean = false;
   showErrorBanner: boolean = false;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-report-problem',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ReportProblemComponent {
   contactForm: FormGroup = new FormGroup({});
-  endPoint: string = `${location.protocol}//${location.hostname}:3000/api/message`;
+  endPoint: string = `${environment.apiUrl}/message`;
   msgType: string = 'problem';
   showSuccessBanner: boolean = false;
   showErrorBanner: boolean = false;
